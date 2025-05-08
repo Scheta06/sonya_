@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@400;600;700&display=swap" rel="stylesheet"/>
   <title>CARTEMOUS</title>
   <style>
-    .page {
+ .page {
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -359,205 +359,85 @@
   font-size: 16px;
   font-weight: 400;
 }
+/* Добавь в стиль */
+@media (max-width: 768px) {
+  .banner-grid {
+    flex-direction: column;
+  }
+
+  .banner-column {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .section-header {
+    align-self: center;
+    font-size: 20px;
+  }
+
+  .category-title, .product-title {
+    font-size: 16px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+}
   </style>
 </head>
 <body>
-  
-  <main class="page">
-    <header class="main-header">
-      <img
-        src="img/logo.png"
-        class="logo"
-        alt="Site logo"
-      />
-      <nav class="main-nav">
-        <a href="#" class="nav-link">ГЛАВНАЯ</a>
-        <a href="#" class="nav-link">КОНТАКТЫ</a>
-      </nav>
-      <a href="reg.html" class="auth-link">РЕГИСТРАЦИЯ|ВХОД</a>
-    </header>
-  
-    <h1 class="page-title">ГЛАВНАЯ</h1>
-  
-    <section class="content">
-      <div class="banner-container">
-        <div class="banner-grid">
-          <div class="banner-column">
-            <img
-              src="https://i.ibb.co/5hb7hJJ3/banner2.png"
-              class="banner-image"
-              alt="Banner image 1"
-            />
-          </div>
-          <div class="banner-column">
-            <img
-              src="https://i.ibb.co/cSBVmGKH/banner1.png"
-              class="banner-image-2"
-              alt="Banner image 2"
-            />
-          </div>
-        </div>
-      </div>
-  
-      <div class="section-header">
-        <a href="category.html" class="in_link">
-        <h2 class="section-title">Популярные категории</h2>
-        <img
-          src="https://i.ibb.co/VYCTb5Lb/Polygon-3.png"
-          class="section-icon"
-          alt="Categories icon"
-        />
-        </a>
-      </div>
-  
-      <section class="categories-grid">
-        <article class="category-card">
-          <img
-            src="https://i.ibb.co/r20N54Kb/tshirt.png"
-            class="category-image"
-            alt="Футболки"
-          />
-          <h3 class="category-title">Футболки</h3>
-        </article>
-  
-        <article class="category-card">
-          <img
-            src="https://i.ibb.co/4RY6DzFP/hearts.png"
-            class="category-image"
-            alt="Украшения"
-          />
-          <h3 class="category-title">Украшения</h3>
-        </article>
-  
-        <article class="category-card">
-          <img
-            src="https://i.ibb.co/B5ww0L1M/yojibomber.png"
-            class="category-image"
-            alt="Верхняя одежда"
-          />
-          <h3 class="category-title">Верхняя одежда</h3>
-        </article>
-  
-        <article class="category-card1">
-          <img
-            src="img/raf.png"
-            class="category-image-large"
-            alt="Обувь"
-          />
-          <h3 class="category-title1">Обувь</h3>
-        </article>
-  
-        <article class="category-card">
-          <img
-            src="img/cap.png"
-            class="category-image-small"
-            alt="Аксессуары"
-          />
-          <h3 class="category-title">Аксессуары</h3>
-        </article>
-      </section>
-  
-      <div class="section-header">
-        <a href="catalog.html" class="in_link">
-        <h2 class="section-title">Популярные позиции</h2>
-        <img
-          src="https://i.ibb.co/VYCTb5Lb/Polygon-3.png"
-          class="section-icon"
-          alt="Popular items icon"
-        />
-        </a>
-      </div>
-  
-      <section class="products-grid">
-        <article class="product-card">
-          <img
-            src="img/shirt.png"
-            class="product-image"
-            alt="enfants riches derrpimes"
-          />
-          <div class="product-info">
-            <a href="tshirtenfants.html" class="in_link1">
-            <h3 class="product-title">enfants riches derrpimes</h3>
-            <p class="product-price">48000 руб.</p>
-            </a>
-          </div>
-        </article>
-  
-        <article class="product-card">
-          <img
-            src="img/jultshirt.png"
-            class="product-image"
-            alt="julius t shirt"
-          />
-          <div class="product-info">
-            <a href="tovar1.html" class="in_link1">
-            <h3 class="product-title">julius t shirt</h3>
-            <p class="product-price">16500 руб.</p>
-            </a>
-          </div>
-        </article>
-  
-        <article class="product-card">
-          <img
-            src="img/rubsvit.png"
-            class="product-image"
-            alt="raf simons emelcodery"
-          />
-          <div class="product-info">
-          <a href="raf.html" class="in_link1">
-          <h3 class="product-title">raf simons emelcodery</h3>
-          <p class="product-price">35000 руб.</p>
-          </a>
-          </div>
-        </article>
-  
-        <article class="product-card">
-          <img
-            src="img/vetmo.png"
-            class="product-image"
-            alt="vetements hi-speed"
-          />
-          <div class="product-info">
-            <a href="vetmohi.html" class="in_link1">
-          <h3 class="product-title">vetements hi-speed</h3>
-          <p class="product-price">35000 руб.</p>
-            </a>
-          </div>
-        </article>
-  
-        <article class="product-card">
-          <img
-            src="img/jeans.png"
-            class="product-image"
-            alt="chrome hearts jeans"
-          />
-          <div class="product-info">
-            <a href="chromejeans.html" class="in_link1">
-          <h3 class="product-title">chrome hearts jeans</h3>
-          <p class="product-price">157000 руб.</p>
-            </a>
-          </div>
-        </article>
-      </section>
-    </section>
-  
-    <footer class="main-footer">
-      <img
-        src="img/logo.png"
-        class="footer-logo"
-        alt="Footer logo"
-      />
-      <nav class="footer-nav">
-        <a href="index.html" class="footer-link">ГЛАВНАЯ</a>
-        <a href="#" class="footer-link">КОНТАКТЫ</a>
-        <a href="reg.html" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
-      </nav>
-      <div class="footer-contact">
-        <a href="#" class="contact-link">НАШ TG</a>
-        <a href="#" class="contact-link">НАШ VK</a>
-        <a href="mailto:CARTEMOUS@GMAIL.COM" class="contact-link">CARTEMOUS@GMAIL.COM</a>
-      </div>
-    </footer>
+<main class="page">
+            </div>
+
+            <!-- Categories -->
+            <div class="section-header">
+                <a href="{{ url('category') }}" class="in_link">
+                    <h2 class="section-title">Популярные категории</h2>
+                    <img src="https://i.ibb.co/VYCTb5Lb/Polygon-3.png " class="section-icon" alt="Categories icon" />
+                </a>
+            </div>
+
+            <section class="categories-grid">
+               
+            </section>
+
+            <!-- Products -->
+            <div class="section-header">
+                <a href="{{ url('catalog') }}" class="in_link">
+                    <h2 class="section-title">Популярные позиции</h2>
+                    <img src="https://i.ibb.co/VYCTb5Lb/Polygon-3.png " class="section-icon" alt="Popular items icon" />
+                </a>
+            </div>
+
+            <section class="products-grid">
+                @foreach($products as $product)
+                    <article class="product-card">
+                        <img src="{{ $product['image'] }}" class="product-image" alt="{{ $product['title'] }}" />
+                        <div class="product-info">
+                            <a href="#" class="in_link1">
+                                <h3 class="product-title">{{ $product['title'] }}</h3>
+                                <p class="product-price">{{ $product['price'] }}</p>
+                            </a>
+                        </div>
+                    </article>
+                @endforeach
+            </section>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <img src="https://i.ibb.co/VWwqGNN8/logo.png " class="footer-logo" alt="Footer logo" />
+            <nav class="footer-nav">
+                <a href="{{ url('/') }}" class="footer-link">ГЛАВНАЯ</a>
+                <a href="#" class="footer-link">КОНТАКТЫ</a>
+                <a href="{{ route('login') }}" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
+            </nav>
+            <div class="contact-info">
+                <a href="#" class="contact-link">НАШ TG</a>
+                <a href="#" class="contact-link">НАШ VK</a>
+                <a href="mailto:CARTEMOUS@GMAIL.COM" class="contact-link">CARTEMOUS@GMAIL.COM</a>
+            </div>
+        </footer>
   </main>
 </body>
 </html>

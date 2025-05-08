@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>КАТЕГОРИИ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-   <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>КАТЕГОРИИ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@400;600&display=swap" rel="stylesheet" />
+  <style>
     .category {
     background-color: #FFFFFF;
     display: flex;
@@ -200,112 +200,67 @@
   text-decoration: none;
   color: #000000;
 }
-   </style>
-  </head>
-  <body>
-    <div class="category">
-      <header class="main-header">
-        <img src="img/logo.png" alt="Logo" class="logo" />
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">ГЛАВНАЯ</a>
-          <a href="#" class="nav-link">КОНТАКТЫ</a>
-        </nav>
-        <a href="reg.html" class="auth-link">РЕГИСТРАЦИЯ|ВХОД</a>
-      </header>
+  </style>
+</head>
+<body>
+  <div class="category">
+    <header class="main-header">
+      <img src="https://i.ibb.co/VWwqGNN8/logo.png " alt="Logo" class="logo" />
+      <nav class="main-nav">
+        <a href="{{ url('/') }}" class="nav-link">ГЛАВНАЯ</a>
+        <a href="#" class="nav-link">КОНТАКТЫ</a>
+      </nav>
 
-      <h1 class="category-title">КАТЕГОРИИ</h1>
+      @auth
+        <span class="auth-link">Привет, {{ Auth::user()->first_name }}!</span>
+      @else
+        <a href="{{ route('login') }}" class="auth-link">РЕГИСТРАЦИЯ|ВХОД</a>
+      @endauth
+    </header>
 
-      <section class="category-grid top-grid">
-        <article class="category-card">
-          <a href="tshirt.html" class="cat_link">
-          <img src="img/tshirt.png" alt="Футболки" class="category-image" />
-          <h2 class="category-name">Футболки</h2>
-          </a>
-        </article>
+    <h1 class="category-title">КАТЕГОРИИ</h1>
 
-        <article class="category-card">
-          <a href="tshirt.html" class="cat_link">
-          <img src="img/hearts.png" alt="Украшения" class="category-image" />
-          <h2 class="category-name">Украшения</h2>
-          </a>
-        </article>
+    <section class="category-grid top-grid">
+      @foreach($categories as $index => $category)
+        @if($index < 5)
+          <article class="category-card">
+            <a href="#" class="cat_link">
+              <img src="{{ $category['image'] }}" alt="{{ $category['title'] }}" class="category-image" />
+              <h2 class="category-name">{{ $category['title'] }}</h2>
+            </a>
+          </article>
+        @endif
+      @endforeach
+    </section>
 
-        <article class="category-card">
-          <a href="bomber.html" class="cat_link">
-          <img src="img/yojibomber.png" alt="Верхняя одежда" class="category-image" />
-          <h2 class="category-name">Верхняя одежда</h2>
-          </a>
-        </article>
+    <section class="category-grid bottom-grid">
+      @foreach($categories as $index => $category)
+        @if($index >= 5)
+          <article class="category-card">
+            <a href="#" class="cat_link">
+              <img src="{{ $category['image'] }}" alt="{{ $category['title'] }}" class="category-image" />
+              <h2 class="category-name">{{ $category['title'] }}</h2>
+            </a>
+          </article>
+        @endif
+      @endforeach
+    </section>
 
-        <article class="category-card">
-          <a href="boots.html" class="cat_link">
-          <img src="img/raf.png" alt="Обувь" class="category-image" />
-          <h2 class="category-name">Обувь</h2>
-          </a>
-        </article>
+    <footer class="main-footer">
+      <img src="https://i.ibb.co/VWwqGNN8/logo.png " alt="Logo" class="logo" />
 
-        <article class="category-card">
-          <a href="acs.html" class="cat_link">
-          <img src="img/cap.png" alt="Аксессуары" class="category-image" />
-          <h2 class="category-name">Аксессуары</h2>
-          </a>
-        </article>
-      </section>
+      <nav class="footer-nav">
+        <a href="{{ url('/') }}" class="footer-link">ГЛАВНАЯ</a>
+        <a href="#" class="footer-link">КОНТАКТЫ</a>
+        <a href="{{ route('login') }}" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
+      </nav>
 
-      <section class="category-grid bottom-grid">
-        <article class="category-card">
-          <a href="bruki.html" class="cat_link">
-          <img src="img/bruki.png" alt="Брюки" class="category-image" />
-          <h2 class="category-name">Брюки</h2>
-          </a>
-        </article>
-
-        <article class="category-card">
-          <a href="svit.html" class="cat_link">
-          <img src="img/rubsvit.png" alt="Свитеры, джемперы" class="category-image" />
-          <h2 class="category-name">Свитеры, джемперы</h2>
-          </a>
-        </article>
-
-        <article class="category-card">
-          <a href="jeans.html" class="cat_link">
-          <img src="img/jeans.png" alt="Джинсы" class="category-image" />
-          <h2 class="category-name">Джинсы</h2>
-          </a>
-        </article>
-
-        <article class="category-card">
-          <a href="tshirt.html" class="cat_link">
-          <img src="img/vetmo.png" alt="Рубашки" class="category-image" />
-          <h2 class="category-name">Рубашки</h2>
-          </a>
-        </article>
-
-        <article class="category-card">
-          <a href="tshirt.html" class="cat_link">
-          <img src="img/bag.png" alt="Сумки" class="category-image" />
-          <h2 class="category-name">Сумки</h2>
-          </a>
-        </article>
-      </section>
-
-      <footer class="main-footer">
-        <img src="img/logo.png" alt="Logo" class="logo" />
-
-        <nav class="footer-nav">
-          <a href="index.html" class="footer-link">ГЛАВНАЯ</a>
-          <a href="#" class="footer-link">КОНТАКТЫ</a>
-          <a href="reg.html" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
-        </nav>
-
-        <div class="contact-info">
-          <a href="#" class="contact-link">НАШ TG</a>
-          <a href="#" class="contact-link">НАШ VK</a>
-          <a href="mailto:CARTEMOUS@GMAIL.COM" class="contact-link"
-            >CARTEMOUS@GMAIL.COM</a
-          >
-        </div>
-      </footer>
-    </div>
-  </body>
+      <div class="contact-info">
+        <a href="#" class="contact-link">НАШ TG</a>
+        <a href="#" class="contact-link">НАШ VK</a>
+        <a href="mailto:CARTEMOUS@GMAIL.COM" class="contact-link">CARTEMOUS@GMAIL.COM</a>
+      </div>
+    </footer>
+  </div>
+</body>
 </html>

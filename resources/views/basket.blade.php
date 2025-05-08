@@ -270,12 +270,12 @@
     </style>
     <meta charset="UTF-8">
         <header class="header">
-          <img src="img/logo.png" alt="Logo" class="logo" />
+          <img src="https://ibb.co/svWV4PPr" alt="Logo" class="logo" />
           <nav class="main-nav">
-            <a href="index.html" class="nav-link">ГЛАВНАЯ</a>
+            <a href="{{url('/')}}" class="nav-link">ГЛАВНАЯ</a>
             <a href="#" class="nav-link">КОНТАКТЫ</a>
           </nav>
-          <a href="reg.html" class="auth-link">РЕГИСТРАЦИЯ|ВХОД</a>
+          <a href="{{url('register')}}" class="auth-link">РЕГИСТРАЦИЯ|ВХОД</a>
         </header>
       
         <section class="cart-content">
@@ -283,7 +283,7 @@
             <div class="catalog-column">
               <div class="catalog-header">
                 <div class="catalog-title-wrapper">
-                  <a href="catalog.html" class="hrefcat">
+                  <a href="{{url('catalog')}}" class="hrefcat">
                   <h1 class="catalog-title">КАТАЛОГ</h1>
                   </a>
                 </div>
@@ -313,11 +313,11 @@
         </section>
       
         <footer class="footer">
-          <img src="img/logo.png" alt="Logo" class="logo" />
+          <img src="https://ibb.co/svWV4PPr" alt="Logo" class="logo" />
           <nav class="footer-nav">
-            <a href="#" class="footer-link">ГЛАВНАЯ</a>
+            <a href="{{url('/')}}" class="footer-link">ГЛАВНАЯ</a>
             <a href="#" class="footer-link">КОНТАКТЫ</a>
-            <a href="#" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
+            <a href="{{url('register')}}" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
           </nav>
           <div class="contact-info">
             <a href="#" class="social-link">НАШ TG</a>
