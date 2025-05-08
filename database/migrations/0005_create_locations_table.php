@@ -10,7 +10,8 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('city', 45);
+            $table->string('title', 45);
+            $table->timestamps();
         });
     }
 

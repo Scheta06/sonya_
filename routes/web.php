@@ -1,48 +1,22 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CategoryController;
 
+/*Регистрация, авторизация, восстановление пароля, выход из аккаунта, профиль*/
 
-Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/register', [RegisterController::class, 'index'])->name('registerForm');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 
-
-
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-
-Route::post('/register', [AuthController::class, 'register']);
-
-
-
-// Форма входа
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-
-// Обработка формы входа
-Route::post('/login', [AuthController::class, 'login']);
-
-
-
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
-
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('catalog', function () {
-    return view('catalog');
-});
-Route::get('category', function () {
-    return view('category');
-});
-Route::get('basket', function () {
-    return view('basket');
-});
-Route::get('register', function () {
-    return view('register');
-});
-Route::get('login', function () {
-    return view('login');
+Route::middleware(['auth'])->group(function () {
+    /*Здесь должны храниться те маршруты, где пользователь должен быть авторизирован, например: профиль, выход из аккаунта, переход к оплате и т.д*/
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 });

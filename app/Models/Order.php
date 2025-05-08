@@ -9,27 +9,24 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $table = 'orders';
-    protected $primaryKey = 'idorder';
-    public $timestamps = false;
-
     protected $fillable = [
         'date',
         'status',
         'payment',
-        'delivery',
         'amountorder',
-        'user_iduser',
-        'quantity'
+        'quantity',
     ];
 
-    public function goods()
-    {
-        return $this->belongsToMany(Goods::class, 'order_has_goods', 'order_idorder', 'goods_idgoods');
+    protected $hidden = [
+        'user_id',
+        'delivery_id'
+    ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_iduser', 'iduser');
+    public function delivery() {
+        return $this->belongsTo(Delivery::class);
     }
 }

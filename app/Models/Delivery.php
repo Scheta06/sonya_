@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class Delivery extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,7 @@ class Location extends Model
         'title'
     ];
 
-    public function goods() {
-        return $this->hasMany(Good::class, 'location_id');
+    public function order() {
+        return $this->hasMany(Delivery::class, 'delivery_id');
     }
 }

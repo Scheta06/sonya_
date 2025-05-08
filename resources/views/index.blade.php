@@ -247,7 +247,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  
+
 }
 .product-image {
   aspect-ratio: 0.92;
@@ -355,7 +355,7 @@
 }
 .category-title1{
   align-self: center;
-  
+
   font-size: 16px;
   font-weight: 400;
 }
@@ -391,36 +391,28 @@
 
             <!-- Categories -->
             <div class="section-header">
-                <a href="{{ url('category') }}" class="in_link">
+                <a href="" class="in_link">
                     <h2 class="section-title">Популярные категории</h2>
                     <img src="https://i.ibb.co/VYCTb5Lb/Polygon-3.png " class="section-icon" alt="Categories icon" />
                 </a>
             </div>
 
-            <section class="categories-grid">
-               
-            </section>
+            <div class="categories-grid">
+            @foreach($categories as $category)
+                <h1>{{ $category->title }}</h1>
+            @endforeach
+            </div>
 
             <!-- Products -->
             <div class="section-header">
-                <a href="{{ url('catalog') }}" class="in_link">
+                <a href="" class="in_link">
                     <h2 class="section-title">Популярные позиции</h2>
                     <img src="https://i.ibb.co/VYCTb5Lb/Polygon-3.png " class="section-icon" alt="Popular items icon" />
                 </a>
             </div>
 
             <section class="products-grid">
-                @foreach($products as $product)
-                    <article class="product-card">
-                        <img src="{{ $product['image'] }}" class="product-image" alt="{{ $product['title'] }}" />
-                        <div class="product-info">
-                            <a href="#" class="in_link1">
-                                <h3 class="product-title">{{ $product['title'] }}</h3>
-                                <p class="product-price">{{ $product['price'] }}</p>
-                            </a>
-                        </div>
-                    </article>
-                @endforeach
+
             </section>
         </section>
 
@@ -430,7 +422,7 @@
             <nav class="footer-nav">
                 <a href="{{ url('/') }}" class="footer-link">ГЛАВНАЯ</a>
                 <a href="#" class="footer-link">КОНТАКТЫ</a>
-                <a href="{{ route('login') }}" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
+                <a href="" class="footer-link">РЕГИСТРАЦИЯ|ВХОД</a>
             </nav>
             <div class="contact-info">
                 <a href="#" class="contact-link">НАШ TG</a>

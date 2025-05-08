@@ -2,39 +2,42 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasFactory, Notifiable;
 
-    protected $table = 'users';
-    protected $primaryKey = 'iduser';
     protected $fillable = [
-        'role',
-        'fio',
+        'surname',
+        'name',
+        'patronymic',
+        'birthday',
         'email',
-        'password',
-        'birthday'
+        'role',
+        'password'
     ];
 
     protected $hidden = [
-        'password',
         'remember_token',
+        'password'
     ];
 
-    protected $casts = [
-        'birthday' => 'date',
-    ];
-
-    public function baskets()
+    protected function casts(): array
     {
-        return $this->hasMany(Basket::class, 'user_iduser', 'iduser');
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
     }
 
-    public function orders()
-    {
-        return $this->hasMany(Order::class, 'user_iduser', 'iduser');
+    public function order() {
+        return $this->hasMany(Order::class, 'user_id');
+    }
+
+    public function basket() {
+        return $this->hasOne(Basket::class, 'user_id');
     }
 }

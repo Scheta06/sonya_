@@ -11,16 +11,9 @@ return new class extends Migration
         Schema::create('baskets', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity')->default(1);
-            
-            $table->foreignId('user_id')
-                  ->references('id')
-                  ->on('users')
-                  ->onDelete('cascade');
-                  
-            $table->foreignId('goods_id')
-                  ->references('id')
-                  ->on('goods')
-                  ->onDelete('cascade');
+
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('goods_id')->references('id')->on('goods')->onDelete('cascade');
         });
     }
 
